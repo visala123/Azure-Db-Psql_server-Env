@@ -18,14 +18,15 @@ resource "azurerm_postgresql_flexible_server" "psql" {
   authentication {
     password_auth_enabled = var.password_auth_enabled
   }
+  lifecycle {
+    prevent_destroy = var.prevent_destroy
+  }
 
-  # Uncomment if backups are to be configured
+  #Uncomment if backups are to be configured
   # backup {
   #   backup_retention_days        = var.backup_retention_days
   #   geo_redundant_backup_enabled = var.geo_redundant_backup_enabled
   # }
 
-  lifecycle {
-    prevent_destroy = var.prevent_destroy
-  }
+  
 }
