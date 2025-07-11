@@ -8,7 +8,7 @@ variable "zone" {}
 variable "password_auth_enabled" {}
 variable "backup_retention_days" {}
 variable "geo_redundant_backup_enabled" {}
-variable "prevent_destroy" {}
+#variable "prevent_destroy" {}
 variable "admin_user" {}
 variable "admin_password" {
   sensitive = true
