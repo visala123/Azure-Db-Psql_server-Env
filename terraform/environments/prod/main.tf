@@ -14,7 +14,6 @@ module "psql" {
   password_auth_enabled     = var.password_auth_enabled
   backup_retention_days     = var.backup_retention_days
   geo_redundant_backup_enabled = var.geo_redundant_backup_enabled
-  #prevent_destroy           = false
   admin_user                = var.admin_user
   admin_password            = var.admin_password
   tags                      = var.tags
