@@ -137,6 +137,10 @@ Click Save
 This will enforce manual approval before applying infrastructure.
 
 # Workflow
+in deployment.yml file choose the env either dev or prod under two pipelines plan and apply
+example:
+env:
+      ENV: ${{ github.event.inputs.environment || 'dev' }}
 
  Trigger on stage branch
 
@@ -145,8 +149,10 @@ Automatically runs terraform init, plan, and Infracost report
 Skips apply step (for preview only)
 
  Trigger on main branch (Manual Approval)
- 
+
 Go to Actions → Terraform Azure Psql DB CI/CD → Run workflow
+
+Select the envronment prod or dev
 
 Enter input yes
 
