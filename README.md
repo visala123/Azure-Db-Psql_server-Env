@@ -86,7 +86,7 @@ terraform/
 
 ##  Required Secrets in GitHub
 
-In your GitHub repo, go to **Settings → Secrets and Variables → Actions** and add:
+In your GitHub repo, go to **Settings → Environments → prod and dev->add Environment secrets** and add:
 
 1.AZURE_CREDENTIALS  and the value is in Json format
 
@@ -104,31 +104,48 @@ How you get these : in shell run the command :
 ```
 # az ad sp create-for-rbac --name "<App registration name(Service Principal)>" --role Contributor --scopes /subscriptions/$(az account show --query id -o tsv) --sdk-auth
 ```
+2.POSTGRES_ADMIN_PASSWORD  and value you can give any value for testing purpose 
 
-2.INFRACOST_API_KEY  value get from the infracost.io site under Organization settings->API Token
+In your GitHub repo, go to **Settings → Secrets & variables → Actions->New Repositorysecrets** and add
+
+3.INFRACOST_API_KEY  value get from the infracost.io site under Organization settings->API Token
 
 # Add Collaborators
 Go to your repo → Settings → Collaborators
+
 Click "Invite a collaborator"
+
 Enter your teammate’s GitHub username
+
 Choose appropriate access (usually Write or Admin)
+
 Send invite
+
 Note: If you're the owner, you cannot add yourself — you already have full access.
+
 # Add a GitHub Environment
+
 Go to Settings → Environments
+
 Click "New environment", name it dev-approval
+
 Under "Deployment protection rules", click "Required reviewers"
+
 Add your GitHub username (or a teammate)
 Click Save
+
 This will enforce manual approval before applying infrastructure.
 
 # Workflow
+
  Trigger on stage branch
+
 Automatically runs terraform init, plan, and Infracost report
 
 Skips apply step (for preview only)
 
  Trigger on main branch (Manual Approval)
+ 
 Go to Actions → Terraform Azure Psql DB CI/CD → Run workflow
 
 Enter input yes
