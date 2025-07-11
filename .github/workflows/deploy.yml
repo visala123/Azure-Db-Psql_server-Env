@@ -20,8 +20,8 @@ jobs:
     name: Terraform Plan and Cost Estimate
     runs-on: ubuntu-latest
     environment: ${{ github.event.inputs.environment || 'prod' }}
-    with:
-      creds: ${{ secrets.AZURE_CREDENTIALS }}
+    # with:
+    #   creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     env:
     
@@ -105,8 +105,8 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.confirm_apply == 'yes'
 
     environment: ${{ github.event.inputs.environment || 'prod' }}
-    with:
-      creds: ${{ secrets.AZURE_CREDENTIALS }}
+    # with:
+    #   creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     env:
     
