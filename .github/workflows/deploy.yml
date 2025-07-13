@@ -19,7 +19,7 @@ jobs:
   plan:
     name: Terraform Plan and Cost Estimate
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment || 'prod' }}
+    environment: ${{ github.event.inputs.environment || 'prod-plan' }}
     env:
       ENV: ${{ github.event.inputs.environment || 'prod' }}
       TF_VAR_admin_password: ${{ secrets.POSTGRES_ADMIN_PASSWORD }}
