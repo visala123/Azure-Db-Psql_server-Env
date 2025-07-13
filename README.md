@@ -104,7 +104,7 @@ How you get these : in shell run the command :
 ```
 # az ad sp create-for-rbac --name "<App registration name(Service Principal)>" --role Contributor --scopes /subscriptions/$(az account show --query id -o tsv) --sdk-auth
 ```
-2.POSTGRES_ADMIN_PASSWORD  and value you can give any value for testing purpose 
+2.POSTGRES_ADMIN_PASSWORD  and value you can give any value for testing purpose I gave password@123
 
 In your GitHub repo, go to **Settings → Secrets & variables → Actions->New Repositorysecrets** and add
 
