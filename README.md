@@ -86,7 +86,7 @@ terraform/
 
 ##  Required Secrets in GitHub
 
-In your GitHub repo, go to **Settings → Environments → prod and dev->add Environment secrets** and add:
+In your GitHub repo, go to **Settings → Environments → prod and dev , dev-plan and prod-plan->add Environment secrets** and add:
 
 1.AZURE_CREDENTIALS  and the value is in Json format
 
@@ -105,8 +105,6 @@ How you get these : in shell run the command :
 # az ad sp create-for-rbac --name "<App registration name(Service Principal)>" --role Contributor --scopes /subscriptions/$(az account show --query id -o tsv) --sdk-auth
 ```
 2.POSTGRES_ADMIN_PASSWORD  and value you can give any value for testing purpose I gave password@123
-
-In your GitHub repo, go to **Settings → Secrets & variables → Actions->New Repositorysecrets** and add
 
 3.INFRACOST_API_KEY  value get from the infracost.io site under Organization settings->API Token
 
@@ -188,7 +186,7 @@ terraform destroy
 ```
 
 # References
-Azure Cache for Redis - Terraform Docs
+Azure postgresql_flexible_server - Terraform Docs
 
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/postgresql_flexible_server
  
